@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TcpClientBasit
@@ -34,7 +28,7 @@ namespace TcpClientBasit
             }
 
             var nStream = tcpClient.GetStream();
-            var reader = new StreamReader(nStream);
+            var reader = new StreamReader(nStream, Encoding.Default, true);
             var writer = new StreamWriter(nStream);
             string readedStr;
             writer.WriteLine(txtMesaj.Text);
